@@ -40,7 +40,6 @@ async function getLanguagesPromise() {
         }
     }
     const sortedLanguages = Array.from(languages, ([name, lines]) => ({ name, lines }));
-    console.log("sortedLanguages: ", sortedLanguages);
     return sortedLanguages;
 }
 

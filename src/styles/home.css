@@ -3,7 +3,6 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2, max-content);
-	gap: 8%;
 	align-items: start;
 }
 
@@ -83,75 +82,4 @@
 
 .home__projects-link:hover::before {
 	opacity: 0.6;
-}
-
-.home__languages {
-	grid-column: span 3;
-	height: max-content;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin-bottom: 2rem;
-}
-
-.home__languages-title {
-	font-size: 4rem;
-	font-weight: 700;
-	text-wrap: wrap;
-	text-align: center;
-}
-
-.home__languages-list {
-	grid-column: span 3;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin: 1rem 0 2rem;
-}
-
-.home__language {
-	display: flex;
-	align-items: center;
-	margin-bottom: 1rem;
-}
-
-.home__language-container {
-	width: 20%;
-	display: flex;
-	align-items: center;
-	justify-content: end;
-}
-
-.home__language-icon {
-	width: 2rem;
-	height: 2rem;
-}
-
-.home__language-name {
-	width: min-content;
-	font-size: 1.25rem;
-	font-weight: 600;
-	text-align: right;
-	margin-right: 1rem;
-}
-
-.home__language-bar {
-	display: flex;
-	width: 80%;
-	height: 1.5rem;
-	border-radius: 0.75rem;
-	margin: 0 1rem;
-}
-
-.home__language-bar-fill {
-	background: linear-gradient(50deg, #770a00 0%, #bf5dbb 15%, #3765cd 30%, #4ff5ec 60%, #66b160 100%) bottom/150% 2000%;
-	background-clip: content-box;
-	border-radius: 0.75rem;
-}
-
-.home__language-percentage {
-	margin-left: 1rem;
-	width: 20%;
-	font-size: 1.25rem;
 }
