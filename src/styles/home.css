@@ -2,9 +2,9 @@
 	margin: 2rem 8%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(3, minmax(auto, max-content));
+	grid-template-rows: repeat(2, max-content);
 	gap: 8%;
-    align-items: start;
+	align-items: start;
 }
 
 .home__image-container {
@@ -80,23 +80,28 @@
 
 .home__languages {
 	grid-column: span 3;
+	height: max-content;
 	display: flex;
+	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: center;
+	margin-bottom: 2rem;
 }
 
 .home__languages-title {
 	font-size: 4rem;
 	font-weight: 700;
 	text-wrap: wrap;
+	text-align: center;
+	margin-bottom: 2rem;
 }
 
 .home__languages-list {
 	grid-column: span 3;
 	display: flex;
 	flex-direction: column;
-	flex-wrap: wrap;
 	justify-content: center;
+	margin-bottom: 2rem;
 }
 
 .home__language {
@@ -121,7 +126,8 @@
 }
 
 .home__language-bar-fill {
-	background-color: #4caf50;
+	background: linear-gradient(20deg, #770a00 0%, #bf5dbb 15%, #3765cd 22%, #4ff5ec 60%, #66b160 100%) bottom/150% 2000%;
+	background-clip: content-box;
 	border-radius: 0.75rem;
 }
 

@@ -6,8 +6,8 @@ import '@/styles/globals.css';
 
 export default function Home() {
   let languages: { name: string; lines: number; percentage?: string }[] = [
-    { name: "JavaScript", lines: 10000 },
-    { name: "TypeScript", lines: 10000 },
+    { name: "JavaScript", lines: 8500 },
+    { name: "TypeScript", lines: 11000 },
     { name: "HTML", lines: 3000 },
     { name: "CSS", lines: 6000 },
     { name: "CSharp", lines: 8000 },
@@ -15,6 +15,9 @@ export default function Home() {
     { name: "C", lines: 5400 },
     { name: "Java", lines: 200 },
     { name: "C++", lines: 3200 },
+    { name: "Haskell", lines: 800 },
+    { name: "Kotlin", lines: 1200 }, 
+    { name: "Clojure", lines: 240 },
   ].sort((a, b) => b.lines - a.lines);
 
   const totalLines = languages.reduce((acc, lang) => acc + lang.lines, 0);
@@ -40,7 +43,6 @@ export default function Home() {
       </div>
       <div className="home__languages">
         <h2 className="home__languages-title gradient-text">Programming Languages I Use</h2>
-      </div>
       <div className="home__languages-list">
         {languages
           .map((language) => (
@@ -53,6 +55,7 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </div>
     </main>
   );
 }
