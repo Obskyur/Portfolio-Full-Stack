@@ -60,7 +60,7 @@
 }
 
 .language__bar-fill {
-	background: linear-gradient(50deg, #770a00 0%, #bf5dbb 15%, #3765cd 30%, #4ff5ec 60%, #66b160 100%) bottom/150% 2000%;
+	background: var(--oc-gradient-rv) bottom/100% 2000%;
 	background-clip: content-box;
 	border-radius: 0.75rem;
 }

@@ -26,10 +26,10 @@ function getMyRepos() {
 async function getLanguagesPromise() {
     let repos = await getMyRepos();
     repos = repos.filter(repo => repo.fork === false);
-    const languages = new Map();
     const langURLs = repos.map(repo => repo.languages_url)
     const responses = await Promise.all(langURLs.map(url => request(url)));
-
+    const languages = new Map();
+    
     for (const languagesData of responses) {
         for (const language in languagesData) {
             if (languages.has(language)) {

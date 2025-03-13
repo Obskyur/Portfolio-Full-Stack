@@ -62,7 +62,7 @@
 	border-width: 2px;
 	border-style: solid;
 	border-radius: 20px;
-	border-image: linear-gradient(20deg, #66b160 0%, #4ff5ec 20%, #3765cd 60%, #bf5dbb 80%, #770a00 100%) 1;
+	border-image: var(--oc-gradient) 1;
 	cursor: pointer;
 	transition: background-color 0.3s;
 }
@@ -74,10 +74,10 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: radial-gradient(ellipse at center, #01a1b144 20%, #01a1b100 70%);
+	background: radial-gradient(ellipse at center, #01a1b1b6 20%, #01a1b100 70%);
 	opacity: 0;
 	transition: opacity 0.5s ease;
-	z-index: 1;
+	z-index: -1;
 }
 
 .home__projects-link:hover::before {
