@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import '@/styles/home.css';
 import '@/styles/globals.css';
+import { getLanguages } from "@/utils/githubAPI";
 
 export default function Home() {
   let languages: { name: string; lines: number; percentage?: string }[] = [
@@ -29,7 +30,8 @@ export default function Home() {
 
   const maxPercentage = languages[0].percentage;
 
-  
+  const githubLangs = getLanguages();
+  console.log(githubLangs);
 
   return (
     <main className="home">

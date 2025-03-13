@@ -30,6 +30,7 @@ a {
 }
 
 .gradient-text {
+  text-shadow:  3px 3px 3px #00000044;
 	background: linear-gradient(20deg, #66b160, #4ff5ec, #3765cd, #bf5dbb, #770a00);
 	background-clip: text;
 	-webkit-background-clip: text;
