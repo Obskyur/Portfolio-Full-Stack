@@ -1,10 +1,12 @@
+'use server'
 
 function request(url, options = {
     method: 'GET',
     headers: {
         'Accept': 'application/vnd.github+json',
         'Content-Type': 'application/json',
-    }
+    },
+    next: { revalidate: 3600 },
 }) {
     return fetch(url, options).then(handleResponse);
   }
@@ -21,18 +23,14 @@ function getMyRepos() {
     return request('https://api.github.com/users/Obskyur/repos');
 }
 
-async function getLanguages() {
+async function getLanguagesPromise() {
     let repos = await getMyRepos();
     repos = repos.filter(repo => repo.fork === false);
-    console.log("repos: ", repos);
     const languages = new Map();
     const langURLs = repos.map(repo => repo.languages_url)
     const responses = await Promise.all(langURLs.map(url => request(url)));
 
-    console.log("responses: ", responses);
-
     for (const languagesData of responses) {
-        console.log("languageData: ", languagesData);
         for (const language in languagesData) {
             if (languages.has(language)) {
                 languages.set(language, languages.get(language) + languagesData[language]);
@@ -41,11 +39,11 @@ async function getLanguages() {
             }
         }
     }
-    const sortedLanguages = Array.from(languages.entries()).sort((a, b) => b[1] - a[1]);
+    const sortedLanguages = Array.from(languages, ([name, lines]) => ({ name, lines }));
     console.log("sortedLanguages: ", sortedLanguages);
     return sortedLanguages;
 }
 
 export {
-    getLanguages,
+    getLanguagesPromise,
 }

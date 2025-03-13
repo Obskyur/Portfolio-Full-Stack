@@ -37,8 +37,14 @@
 	width: 100%;
 	font-size: 6rem;
 	font-weight: 700;
-	margin-bottom: 2rem;
 	text-wrap: wrap;
+}
+
+.line-break {
+	width: 70%;
+	align-self: center;
+	border-top: 1px solid var(--accent-color);
+	margin: 1rem 0;
 }
 
 .home__description-text {
@@ -93,7 +99,6 @@
 	font-weight: 700;
 	text-wrap: wrap;
 	text-align: center;
-	margin-bottom: 2rem;
 }
 
 .home__languages-list {
@@ -101,7 +106,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-bottom: 2rem;
+	margin: 1rem 0 2rem;
 }
 
 .home__language {
@@ -110,8 +115,21 @@
 	margin-bottom: 1rem;
 }
 
-.home__language-name {
+.home__language-container {
 	width: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: end;
+}
+
+.home__language-icon {
+	width: 2rem;
+	height: 2rem;
+	margin-right: 1rem;
+}
+
+.home__language-name {
+	width: min-content;
 	font-size: 1.25rem;
 	font-weight: 600;
 	text-align: right;
@@ -126,7 +144,7 @@
 }
 
 .home__language-bar-fill {
-	background: linear-gradient(20deg, #770a00 0%, #bf5dbb 15%, #3765cd 22%, #4ff5ec 60%, #66b160 100%) bottom/150% 2000%;
+	background: linear-gradient(50deg, #770a00 0%, #bf5dbb 15%, #3765cd 30%, #4ff5ec 60%, #66b160 100%) bottom/150% 2000%;
 	background-clip: content-box;
 	border-radius: 0.75rem;
 }
