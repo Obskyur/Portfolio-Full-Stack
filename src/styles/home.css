@@ -11,7 +11,7 @@
 	width: 100%;
 	aspect-ratio: 1/1;
 	margin: 0 auto;
-	background: radial-gradient(circle, #f1d9bd84 20%, #87695f00 70%), url("/me.png");
+	background: radial-gradient(circle, #7bb4bd44 20%, #87695f00 70%), url("/me.png");
 }
 
 .home__image {
