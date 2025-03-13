@@ -64,8 +64,8 @@ export default function Home() {
           .map((language) => (
             <div key={language.name} className="home__language">
               <div className="home__language-container">
-                <Image className="home__language-icon" src={languageIcons[language.name]} alt={language.name} width="50" height="50" />
                 <span className="home__language-name">{language.name}</span>
+                <Image className="home__language-icon" src={languageIcons[language.name]} alt={language.name} width="50" height="50" />
               </div>
               <div className="home__language-bar">
                 <div className="home__language-bar-fill" style={{ width: `${parseFloat(language.percentage) / parseFloat(maxPercentage) * 100}%` }}></div>

@@ -28,6 +28,7 @@
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
+	align-self: center;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
@@ -125,7 +126,6 @@
 .home__language-icon {
 	width: 2rem;
 	height: 2rem;
-	margin-right: 1rem;
 }
 
 .home__language-name {
@@ -133,6 +133,7 @@
 	font-size: 1.25rem;
 	font-weight: 600;
 	text-align: right;
+	margin-right: 1rem;
 }
 
 .home__language-bar {
