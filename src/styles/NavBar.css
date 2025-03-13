@@ -37,6 +37,10 @@
 	list-style: none;
 }
 
+.header__nav-break {
+	border-right: 1px solid var(--accent-color);
+}
+
 .header__nav-item-link {
     position: relative;
 	font-size: 1.5rem;
