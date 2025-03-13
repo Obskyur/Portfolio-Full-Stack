@@ -1,0 +1,132 @@
+.home {
+	margin: 2rem 8%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, minmax(auto, max-content));
+	gap: 8%;
+    align-items: start;
+}
+
+.home__image-container {
+	grid-column: 1 / 2;
+	width: 100%;
+	aspect-ratio: 1/1;
+	margin: 0 auto;
+	background: radial-gradient(circle, #f1d9bd84 20%, #87695f00 70%), url("/me.png");
+}
+
+.home__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.home__description {
+	grid-column: span 2;
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.home__description-title {
+	width: 100%;
+	font-size: 6rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	text-wrap: wrap;
+}
+
+.home__description-text {
+	font-size: 1.5rem;
+	line-height: 1.5;
+}
+
+.home__projects-link {
+	position: relative;
+	margin-top: 2rem;
+	padding: 1rem 2rem;
+	font-size: 1.5rem;
+	color: var(--text-color);
+	background: transparent;
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 20px;
+	border-image: linear-gradient(20deg, #66b160 0%, #4ff5ec 20%, #3765cd 60%, #bf5dbb 80%, #770a00 100%) 1;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.home__projects-link::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(ellipse at center, #01a1b144 20%, #01a1b100 70%);
+	opacity: 0;
+	transition: opacity 0.5s ease;
+	z-index: 1;
+}
+
+.home__projects-link:hover::before {
+	opacity: 0.6;
+}
+
+.home__languages {
+	grid-column: span 3;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.home__languages-title {
+	font-size: 4rem;
+	font-weight: 700;
+	text-wrap: wrap;
+}
+
+.home__languages-list {
+	grid-column: span 3;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.home__language {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.home__language-name {
+	width: 20%;
+	font-size: 1.25rem;
+	font-weight: 600;
+	text-align: right;
+}
+
+.home__language-bar {
+	display: flex;
+	width: 80%;
+	height: 1.5rem;
+	border-radius: 0.75rem;
+	margin: 0 1rem;
+}
+
+.home__language-bar-fill {
+	background-color: #4caf50;
+	border-radius: 0.75rem;
+}
+
+.home__language-percentage {
+	margin-left: 1rem;
+	width: 20%;
+	font-size: 1.25rem;
+}
