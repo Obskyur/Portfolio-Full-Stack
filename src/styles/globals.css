@@ -1,28 +1,18 @@
 :root {
-  --background: #141212;
-  --foreground: #ededed;
   --bg-color: #413d3e;
   --bg-color-dark: #141212;
   --accent-color: #87695f;
   --text-color-light: #f1d9bd;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #141212;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
+html, body {
   max-width: 100vw;
   overflow-x: hidden;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--text-color-light);
+  background: var(--bg-color-dark);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,8 +29,9 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.gradient-text {
+	background: linear-gradient(20deg, #66b160, #4ff5ec, #3765cd, #bf5dbb, #770a00);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }

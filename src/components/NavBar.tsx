@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import '@/styles/NavBar.css';
+import '@/styles/globals.css';
 
 
 export default function NavBar() {
@@ -10,7 +11,7 @@ export default function NavBar() {
         <header className="header">
             <Link className="header__title-link" href="/">
                 <Image className="header__title-img" src="/avatar.png" alt="profile icon" width="100" height="100" ></Image>
-                <h1 className="header__title-text">Tristan Miller</h1>
+                <h1 className="header__title-text gradient-text">Tristan Miller</h1>
             </Link>
             <nav className="header__nav">
                 <ul className="header__nav-list">
