@@ -1,0 +1,16 @@
+.footer {
+    background-color: var(--bg-color-dark);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5rem;
+    width: 100%;
+    border-top: var(--accent-color) solid 1px;
+}
+
+.footer__text {
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 1rem 8%;
+    color: var(--text-color-light);
+}
