@@ -7,6 +7,7 @@ import remarkParse from 'remark-parse';
 import remarkStringify from 'remark-stringify';
 import remarkHtml from 'remark-html';
 import { read } from 'to-vfile';
+import fs from 'fs';
 
 function parse(metaData: string) {
   const lines = metaData.split('\r\n');
@@ -19,7 +20,7 @@ function parse(metaData: string) {
   return result;
 }
 
-export default async function render(filePath) {
+async function render(filePath) {
   const fullPath = path.join(process.cwd(), filePath);
   let metaData = {};
   
@@ -43,3 +44,29 @@ export default async function render(filePath) {
   };
 }
 
+const experiencesDirectory = path.join(process.cwd(), 'src/experiences');
+
+export default async function getExperiences() {
+  const experienceFiles = fs.readdirSync(experiencesDirectory).filter(file => file.endsWith('.md'));
+
+  let experiences = await Promise.all(experienceFiles.map(async (file) => {
+    const experience = await render(`/src/experiences/${file}`);
+    return {
+      key: file,
+      title: experience['title'],
+      start: experience['start'],
+      end: experience['end'],
+      company: experience['company'],
+      location: experience['location'],
+      content: experience.content,
+    };
+  }));
+
+  experiences.sort((a, b) => {
+    if (a.end === "Ongoing") return -1;
+    if (b.end === "Ongoing") return 1;
+    return new Date(b.end).getTime() - new Date(a.end).getTime();
+  });
+
+  return experiences;
+}
