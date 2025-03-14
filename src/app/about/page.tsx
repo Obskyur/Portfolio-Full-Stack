@@ -1,23 +1,27 @@
+'use client'
+
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
 } from "@/components/Tabs"
+import '@/styles/Tabs.css'
 
 export default function TabsDemo() {
+
   return (
-    <Tabs defaultValue="account" className="w-[400px]">
-      <TabsList className="grid w-full grid-cols-2">
-        <TabsTrigger value="account">Account</TabsTrigger>
-        <TabsTrigger value="password">Password</TabsTrigger>
-      </TabsList>
-      <TabsContent value="account">
-        
-      </TabsContent>
-      <TabsContent value="password">
-        
-      </TabsContent>
-    </Tabs>
-  )
+  <Tabs defaultValue="professional" className="tabs">
+    <TabsList className="grid w-full grid-cols-2">
+      <TabsTrigger value="professional">Professional</TabsTrigger>
+      <TabsTrigger value="personal">Personal</TabsTrigger>
+    </TabsList>
+    <TabsContent value="professional">
+      Now viewing Professional
+    </TabsContent>
+    <TabsContent value="personal">
+      Now viewing Personal
+    </TabsContent>
+  </Tabs>
+  );
 }
