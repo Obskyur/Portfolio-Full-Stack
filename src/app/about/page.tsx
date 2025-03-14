@@ -6,6 +6,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/Tabs"
+import Experience from "@/components/Experience";
 import '@/styles/Tabs.css'
 
 export default function TabsDemo() {
@@ -17,7 +18,15 @@ export default function TabsDemo() {
       <TabsTrigger value="personal">Personal</TabsTrigger>
     </TabsList>
     <TabsContent value="professional">
-      Now viewing Professional
+        <Experience
+          title="B.S. in Software Engineering"
+          start="Aug 2022"
+          end="Ongoing"
+          company="Washington State University"
+          location="Pullman, WA"
+        >
+          
+        </Experience>
     </TabsContent>
     <TabsContent value="personal">
       Now viewing Personal
