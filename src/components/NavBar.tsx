@@ -13,7 +13,7 @@ export default function NavBar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const maxScroll = 100;
+      const maxScroll = 200;
       const newOpacity = Math.max(1 - scrollTop / maxScroll, 0);
       setOpacity(newOpacity);
     };
