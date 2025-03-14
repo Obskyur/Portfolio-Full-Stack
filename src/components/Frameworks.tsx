@@ -7,6 +7,7 @@ import '@/styles/Frameworks.css';
 const frameworkIcons = {
     "Git": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
     "Figma": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
+    "Markdown": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/markdown/markdown-original.svg",
     "ReactJS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     "ExpressJS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
     "NodeJS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
@@ -24,8 +25,10 @@ export default function Frameworks() {
         <div className="frameworks__icons">
         {Object.entries(frameworkIcons).map(([name, icon]) => (
             <div key={name} className="framework">
-            <Image className="framework__icon" src={icon} alt={name} width="50" height="50" />
-            <span className="framework__name">{name}</span>
+                <div className="framework__icon-wrapper">
+                    <Image className="framework__icon" src={icon} alt={name} width="50" height="50" />
+                </div>
+                <span className="framework__name">{name}</span>
             </div>
         ))}
         </div>

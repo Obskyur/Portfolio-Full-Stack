@@ -13,9 +13,8 @@ import path from 'path';
 const experiencesDirectory = path.join(process.cwd(), 'src/experiences');
 const experienceFiles = fs.readdirSync(experiencesDirectory).filter(file => file.endsWith('.md'));
 
-const experiences = await Promise.all(experienceFiles.map(async (file) => {
+let experiences = await Promise.all(experienceFiles.map(async (file) => {
   const experience = await render(`/src/experiences/${file}`);
-  console.log(experience);
   return (
     <Experience
       key={file}
@@ -28,6 +27,12 @@ const experiences = await Promise.all(experienceFiles.map(async (file) => {
     />
   );
 }));
+
+experiences.sort((a, b) => {
+  if (a.props.end === "Ongoing") return -1;
+  if (b.props.end === "Ongoing") return 1;
+  return new Date(b.props.end).getTime() - new Date(a.props.end).getTime();
+});
 
 export default function TabsDemo() {
 
