@@ -5,7 +5,7 @@
   --text-color-light: #f1d9bd;
   --rb-gradient: linear-gradient(20deg, #66b160 0%, #4ff5ec 20%, #3765cd 60%, #bf5dbb 80%, #770a00 100%);
   --rb-gradient-rv: linear-gradient(50deg, #770a00 0%, #bf5dbb 15%, #3765cd 30%, #4ff5ec 60%, #66b160 100%);
-  --oc-gradient: linear-gradient(20deg, #7bb4bd 10%, #01a1b1 20%, #dfe8f1 25%, #dba879 40%, #87695f 80%);
+  --oc-gradient: linear-gradient(to top right, #7bb4bd 10%, #01a1b1 20%, #dfe8f1 25%, #dba879 40%, #87695f 80%);
   --oc-gradient-rv: linear-gradient(40deg, #87695f 5%, #dba879 15%, #dfe8f1 40%, #01a1b1 60%, #7bb4bd 100%);
 }
 
@@ -35,7 +35,7 @@ a {
 
 .gradient-text {
   text-shadow:  3px 3px 3px #00000044;
-	background: var(--oc-gradient) bottom/100% 300%;
+	background: var(--oc-gradient) bottom/100% 400%;
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
