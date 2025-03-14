@@ -16,8 +16,11 @@ export default function NavBar() {
             <nav className="header__nav">
                 <ul className="header__nav-list">
                     <li className="header__nav-item"><Link className="header__nav-item-link" href="/">Home</Link></li>
+                    <div className="header__nav-break"></div>
                     <li className="header__nav-item"><Link className="header__nav-item-link" href="/projects">Projects</Link></li>
+                    <div className="header__nav-break"></div>
                     <li className="header__nav-item"><Link className="header__nav-item-link" href="/about">About</Link></li>
+                    <div className="header__nav-break"></div>
                     <li className="header__nav-item"><Link className="header__nav-item-link" href="/contact">Contact</Link></li>
                 </ul>
             </nav>

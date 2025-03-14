@@ -1,36 +1,42 @@
 :root {
-  --bg-color: #413d3e;
-  --bg-color-dark: #141212;
-  --accent-color: #87695f;
-  --text-color-light: #f1d9bd;
+	--bg-color: #413d3e;
+	--bg-color-dark: #141212;
+	--accent-color: #87695f;
+	--text-color-light: #f1d9bd;
+	--rb-gradient: linear-gradient(20deg, #66b160 0%, #4ff5ec 20%, #3765cd 60%, #bf5dbb 80%, #770a00 100%);
+	--rb-gradient-rv: linear-gradient(50deg, #770a00 0%, #bf5dbb 15%, #3765cd 30%, #4ff5ec 60%, #66b160 100%);
+	--oc-gradient: linear-gradient(to top right, #7bb4bd 10%, #01a1b1 20%, #dfe8f1 25%, #dba879 40%, #87695f 80%);
+	--oc-gradient-rv: linear-gradient(40deg, #87695f 5%, #dba879 15%, #dfe8f1 40%, #01a1b1 60%, #7bb4bd 100%);
 }
 
-html, body {
-  max-width: 100vw;
-  overflow-x: hidden;
+html,
+body {
+	max-width: 100vw;
+	overflow-x: hidden;
 }
 
 body {
-  color: var(--text-color-light);
-  background: var(--bg-color-dark);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	color: var(--text-color-light);
+  background-image: linear-gradient(to top left, var(--bg-color-dark) 40%, #221d1d 100%);
+	font-family: Arial, Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 .gradient-text {
-	background: linear-gradient(20deg, #66b160, #4ff5ec, #3765cd, #bf5dbb, #770a00);
+	text-shadow: 3px 3px 3px #00000044;
+	background: var(--oc-gradient) bottom/100% 400%;
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
