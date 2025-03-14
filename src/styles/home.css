@@ -52,9 +52,9 @@
 	line-height: 1.5;
 }
 
-.home__projects-link {
+.home__page-link {
 	position: relative;
-	margin-top: 2rem;
+	margin: 1rem 2rem 0;
 	padding: 1rem 2rem;
 	font-size: 1.5rem;
 	color: var(--text-color);
@@ -67,7 +67,7 @@
 	transition: background-color 0.3s;
 }
 
-.home__projects-link::before {
+.home__page-link::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -80,6 +80,22 @@
 	z-index: -1;
 }
 
-.home__projects-link:hover::before {
+.home__page-link:hover::before {
 	opacity: 0.6;
+}
+
+.home__description-about {
+	display: flex;
+	flex-direction: column;
+	margin-top: 2rem;
+}
+
+.home__description-about-text {
+	margin-top: 1rem;
+	font-size: 1.5rem;
+}
+
+.home__description-about-links {
+	display: flex;
+	justify-content: space-between;
 }
