@@ -1,4 +1,6 @@
 .footer {
+    position: fixed;
+    bottom: 0;
     background-color: var(--bg-color-dark);
     display: flex;
     justify-content: center;

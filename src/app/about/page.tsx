@@ -1,5 +1,3 @@
-'use client'
-
 import {
   Tabs,
   TabsContent,
@@ -7,7 +5,29 @@ import {
   TabsTrigger,
 } from "@/components/Tabs"
 import Experience from "@/components/Experience";
+import render from "@/utils/experienceRenderer";
 import '@/styles/Tabs.css'
+import fs from 'fs';
+import path from 'path';
+
+const experiencesDirectory = path.join(process.cwd(), 'src/experiences');
+const experienceFiles = fs.readdirSync(experiencesDirectory).filter(file => file.endsWith('.md'));
+
+const experiences = await Promise.all(experienceFiles.map(async (file) => {
+  const experience = await render(`/src/experiences/${file}`);
+  console.log(experience);
+  return (
+    <Experience
+      key={file}
+      title={experience['title']}
+      start={experience['start']}
+      end={experience['end']}
+      company={experience['company']}
+      location={experience['location']}
+      content={experience.content}
+    />
+  );
+}));
 
 export default function TabsDemo() {
 
@@ -18,15 +38,7 @@ export default function TabsDemo() {
       <TabsTrigger value="personal">Personal</TabsTrigger>
     </TabsList>
     <TabsContent value="professional">
-        <Experience
-          title="B.S. in Software Engineering"
-          start="Aug 2022"
-          end="Ongoing"
-          company="Washington State University"
-          location="Pullman, WA"
-        >
-          
-        </Experience>
+      {experiences}
     </TabsContent>
     <TabsContent value="personal">
       Now viewing Personal

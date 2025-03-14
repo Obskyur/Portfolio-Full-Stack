@@ -2,6 +2,7 @@
 	--bg-color: #413d3e;
 	--bg-color-dark: #141212;
 	--accent-color: #87695f;
+	--accent-color-2: #3765cd;
 	--text-color-light: #f1d9bd;
 	--rb-gradient: linear-gradient(20deg, #66b160 0%, #4ff5ec 20%, #3765cd 60%, #bf5dbb 80%, #770a00 100%);
 	--rb-gradient-rv: linear-gradient(50deg, #770a00 0%, #bf5dbb 15%, #3765cd 30%, #4ff5ec 60%, #66b160 100%);
@@ -10,12 +11,12 @@
 }
 
 html,
+
 body {
 	max-width: 100vw;
 	overflow-x: hidden;
-}
-
-body {
+	padding-top: 100px;
+	min-height: 90vh;
 	color: var(--text-color-light);
   background-image: linear-gradient(to top left, var(--bg-color-dark) 40%, #221d1d 100%);
 	font-family: PT Serif, Arial, Helvetica, sans-serif;
