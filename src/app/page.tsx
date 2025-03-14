@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Frameworks from "@/components/Frameworks";
 import Languages from "@/components/Languages";
-import '@/styles/home.css';
+import '@/styles/Home.css';
 import '@/styles/globals.css';
 
 export default function Home() {
@@ -22,8 +22,8 @@ export default function Home() {
         <div className="home__description-about">
           <h3 className="home__description-about-text">Click to learn more about my:</h3>
           <div className="home__description-about-links">
-            <Link className="home__page-link" href="/about"><u>Professional</u>&nbsp;History</Link>
-            <Link className="home__page-link" href="/about"><u>Personal</u>&nbsp;History</Link>
+            <Link className="home__page-link" href={{ pathname: '/about', query: { tab: 'professional' } }}><u>Professional</u>&nbsp;History</Link>
+            <Link className="home__page-link" href={{ pathname: '/about', query: { tab: 'personal' } }}><u>Personal</u>&nbsp;History</Link>
           </div>
         </div>
       </div>
