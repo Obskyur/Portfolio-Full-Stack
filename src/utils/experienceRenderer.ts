@@ -20,7 +20,7 @@ function parse(metaData: string) {
   return result;
 }
 
-async function render(filePath) {
+export async function render(filePath) {
   const fullPath = path.join(process.cwd(), filePath);
   let metaData = {};
   
