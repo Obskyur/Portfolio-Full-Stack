@@ -14,14 +14,23 @@ import getExperiences from "@/utils/experienceRenderer";
 
 export default function TabsDemo() {
   const [experiences, setExperiences] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchExperiences() {
-      const foundExperiences = await getExperiences();
-      setExperiences(foundExperiences);
+      try {
+        const foundExperiences = await getExperiences();
+        setExperiences(foundExperiences);
+      } catch (err) {
+        setError(err.message);
+      }
     }
     fetchExperiences();
   }, []);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
