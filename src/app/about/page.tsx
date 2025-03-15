@@ -20,6 +20,7 @@ export default function TabsDemo() {
     async function fetchExperiences() {
       try {
         const foundExperiences = await getExperiences();
+        console.log("Found experiences: ", foundExperiences);
         setExperiences(foundExperiences);
       } catch (err) {
         setError(err.message);

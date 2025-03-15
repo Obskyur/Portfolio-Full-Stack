@@ -47,8 +47,10 @@ export async function render(filePath) {
 const experiencesDirectory = path.join(process.cwd(), 'src/experiences');
 
 export default async function getExperiences() {
+  console.log("Getting experience files...");
   const experienceFiles = fs.readdirSync(experiencesDirectory).filter(file => file.endsWith('.md'));
 
+  console.log("Extracting experiences...");
   let experiences = await Promise.all(experienceFiles.map(async (file) => {
     const experience = await render(`/src/experiences/${file}`);
     return {
