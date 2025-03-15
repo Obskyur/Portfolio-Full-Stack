@@ -9,7 +9,7 @@ import {
 import Experience from "@/components/Experience";
 import '@/styles/Tabs.css'
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import getExperiences from "@/utils/experienceRenderer";
 
 export default function TabsDemo() {
@@ -23,6 +23,14 @@ export default function TabsDemo() {
     fetchExperiences();
   }, []);
 
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <TabsContentWithSearchParams experiences={experiences} />
+    </Suspense>
+  );
+}
+
+function TabsContentWithSearchParams({ experiences }) {
   const searchParams = useSearchParams();
   const tab = searchParams.get('tab');
   const defaultTab = tab || "professional";
