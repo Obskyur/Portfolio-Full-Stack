@@ -23,6 +23,7 @@ export default function TabsDemo() {
         console.log("Found experiences: ", foundExperiences);
         setExperiences(foundExperiences);
       } catch (err) {
+        console.error(err);
         setError(err.message);
       }
     }
