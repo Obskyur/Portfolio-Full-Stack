@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Frameworks from "@/components/Frameworks";
 import Languages from "@/components/Languages";
-import '@/styles/Home.css';
+import '@/styles/home.css';
 import '@/styles/globals.css';
 
 export default function Home() {
