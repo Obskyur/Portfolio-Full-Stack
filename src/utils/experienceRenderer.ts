@@ -21,7 +21,6 @@ function parse(metaData: string) {
 }
 
 export async function render(filePath) {
-  const fullPath = path.join(process.cwd(), filePath);
   let metaData = {};
   
   // Use remark to convert markdown into HTML string
@@ -33,7 +32,7 @@ export async function render(filePath) {
       metaData = parse(tree.children[0].value);
     })
     .use(remarkHtml)
-    .process(await read(fullPath));
+    .process(await read(filePath));
   
   const content = String(file);
 
@@ -44,7 +43,7 @@ export async function render(filePath) {
   };
 }
 
-const experiencesDirectory = path.join(process.cwd(), 'src/experiences');
+const experiencesDirectory = path.resolve(process.cwd(), 'src', 'app', 'about', 'experiences');
 
 export default async function getExperiences() {
   console.log("Getting experience files...");
@@ -52,7 +51,8 @@ export default async function getExperiences() {
 
   console.log("Extracting experiences...");
   let experiences = await Promise.all(experienceFiles.map(async (file) => {
-    const experience = await render(`/src/experiences/${file}`);
+    const filePath = path.resolve(experiencesDirectory, file);
+    const experience = await render(filePath);
     return {
       key: file,
       title: experience['title'],
