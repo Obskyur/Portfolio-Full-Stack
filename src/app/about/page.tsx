@@ -10,18 +10,24 @@ import Experience from "@/components/Experience";
 import '@/styles/Tabs.css'
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState, Suspense } from 'react';
-import getExperiences from "@/utils/experienceRenderer";
+import { getStaticPaths, getStaticProps } from "@/utils/experienceRenderer";
+// import getExperiences from "@/utils/experienceRenderer";
 
 export default function TabsDemo() {
+  const [paths, setPaths] = useState([]);
   const [experiences, setExperiences] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchExperiences() {
       try {
-        const foundExperiences = await getExperiences();
-        console.log("Found experiences: ", foundExperiences);
-        setExperiences(foundExperiences);
+        const { paths } = await getStaticPaths();
+        console.log("Found experiences: ", paths);
+        setPaths(paths);
+        for (const path of paths) {
+          const exp = await getStaticProps(path);
+          setExperiences([...experiences, exp]);
+        }
       } catch (err) {
         console.error(err);
         setError(err.message);
@@ -53,7 +59,8 @@ function TabsContentWithSearchParams({ experiences }) {
         <TabsTrigger value="personal">Personal</TabsTrigger>
       </TabsList>
       <TabsContent value="professional">
-        {experiences.map(exp => (
+        {experiences.map(exp => 
+          (
           <Experience
             key={exp.key}
             title={exp.title}
@@ -63,7 +70,8 @@ function TabsContentWithSearchParams({ experiences }) {
             location={exp.location}
             content={exp.content}
           />
-        ))}
+        )
+        )}
       </TabsContent>
       <TabsContent value="personal">
         Now viewing Personal
