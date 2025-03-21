@@ -28,8 +28,8 @@ function getExperienceFileNames(): string[]  {
 }
 
 function fetchAndParseExperience(fileNames) {
-  return fileNames.map(path => {
-    const exp = getDataFromFile(path);
+  return fileNames.map(fn => {
+    const exp = getDataFromFile(fn);
     return parseExperience(exp);
   });
 }
