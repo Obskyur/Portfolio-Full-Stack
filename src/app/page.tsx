@@ -15,7 +15,7 @@ export default function Home() {
         <Image className="home__image" src="/me.png" alt="picture of Tristan" width="600" height="600"></Image>
       </div>
       <div className="home__description">
-        <h2 className="home__description-title gradient-text">Full-Stack Developer</h2>
+        <h2 className="home__description-title gradient-text">Junior Software Engineer</h2>
         <div className="line-break"/>
         <p className="home__description-text">I am Tristan Miller &#x2014; a full-stack developer that loves creating user-accessible web and desktop applications by following common industry standards and best practices.</p>
         <Link className="home__page-link" href="/projects">Check out my&nbsp;<u>Projects</u></Link>
