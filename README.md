@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center"><h1 align="center"> My Portfolio -- Full-Stack Web App </h1></div>
 
-## Getting Started
+<!-- Table of Contents -->
+<details open="open">
+<summary align="center"><h2 id="table-of-contents"> 📖 Table of Contents </h2></summary>
+<hr style="margin:0">
+<a href="#general"><strong> ➤ General </strong></a><br>
+<a href="#start"><strong> ➤ Getting Started </strong></a><br>
+<a href="#wip"><strong> ➤ To-Do's </strong></a><br>
+<a href="#owner"><strong> ➤ Owner </strong></a>
+</details>
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<!-- General -->
+<div align="center"><h2 id="general">
+📃 General
+</h2></div>
+<p align="justified">
+<h4>Summary:</h4>
+&emsp;This project serves as the source code for my <a href="https://dev.d1ad492mx0tsen.amplifyapp.com/">Portfolio Website</a>. My portfolio website serves as an 'online resume' containing my programming and other work and life experiences.
+<h4>Technologies:</h4>
+<ul>
+  <li> RESTful API access and parsing </li>
+  <li> Typescript (TS) </li>
+  <li> Node.js and the Node Package Manager (NPM) </li>
+    <ul>
+      <li> NextJS </li>
+      <li> React </li>
+    </ul>
+  <li> Amazon Web Services </li>
+    <ul>
+      <li>Amplify</li>
+      <li>CloudWatch</li>
+    </ul>
+</ul>
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<!-- Getting Started -->
+<div align="center"><h2 id="start">
+💨 Running the Project
+</h2></div>
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+This server should be running live on <a href="https://dev.d1ad492mx0tsen.amplifyapp.com/">AWS</a>, and soon on: <a href="judeswe.dev">my own domain</a>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<h3>If you want to run this project locally instead</h3>
 
-## Learn More
+`npm install` - to retrieve all dependencies
 
-To learn more about Next.js, take a look at the following resources:
+`npm run dev` — to launch the server with the hot reload feature
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`npm run build` - to create the build-optimized project, followed by:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`npm run start` — to launch the server
 
-## Deploy on Vercel
+<!-- To-Do's -->
+<div align="center"><h2 id="wip"> ⏹️ To-Do's </h2></div>
+<ul>
+<li> [ ] Add suspense items for server-loaded items </li>
+<li> [ ] Dynamically retrieve repositories from Github API and use them to render selected projects </li>
+<li> [ ] Complete ".../about" Personal section, including some of my life-changing encounters in a biography </li>
+<li> [ ] Create a contact form that routes messages to my domain-linked inbox </li>
+</ul>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<!-- Owner Info -->
+<div align="center"><h2 id="owner"> 🧑‍🎓 Meet the Owner </h2></div>
+<table> 
+  <tr align="left">
+    <th><b> Name </b></th>
+    <th><b> Github </b></th>
+    <th><b> E-mail </b></th>
+  </tr>
+  <tr align="left">
+    <th> Tristan Miller </th>
+    <th><a href="https://github.com/Obskyur"> Obskyur </a></th>
+    <th> tristan@judeswe.dev </th>
+  </tr>
+</table>
+<p>
+&emsp;I am currently a Software Engineering major attending Washington State University and working through the TripleTen Software Engineering bootcamp.
+</p>
