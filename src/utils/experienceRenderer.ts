@@ -3,7 +3,7 @@ import matter from 'gray-matter';
 import { marked } from 'marked';
 import fs from 'fs';
 
-export type ExperienceType = {
+export type Experience = {
   title: string;
   start: string;
   end: string;
@@ -12,10 +12,10 @@ export type ExperienceType = {
   content: any;
 }
 
-export async function fetchExperiences(): Promise<ExperienceType[]> {
+export function fetchExperiences(): Experience[] {
   try {
-    const fileNames = await getExperienceFileNames();
-    const experiences = await fetchAndParseExperience(fileNames);
+    const fileNames = getExperienceFileNames();
+    const experiences = fetchAndParseExperience(fileNames);
     return sortExperiences(experiences);
   } catch (err) {
     console.error(err);
@@ -23,18 +23,18 @@ export async function fetchExperiences(): Promise<ExperienceType[]> {
   }
 }
 
-async function getExperienceFileNames(): Promise<any> {
+function getExperienceFileNames(): string[]  {
   return fs.readdirSync(path.join('public', 'experiences'));
 }
 
-async function fetchAndParseExperience(fileNames) {
-  return await Promise.all(fileNames.map(async (path) => {
-    const exp = await getStaticProps(path);
+function fetchAndParseExperience(fileNames) {
+  return fileNames.map(path => {
+    const exp = getDataFromFile(path);
     return parseExperience(exp);
-  }));
+  });
 }
 
-async function getStaticProps(fileName) {
+function getDataFromFile(fileName) {
   const markdownWithMeta = fs.readFileSync(
     path.join('public', 'experiences', `${fileName}`),
     'utf-8'
@@ -49,7 +49,7 @@ async function getStaticProps(fileName) {
   }
 }
 
-async function parseExperience(experience): Promise<ExperienceType> {
+function parseExperience(experience): Experience {
   // Split by spaces before key-value pairs
   const lines = experience.frontmatter.split(/\s(?=\w+\s?=\s?")/); 
   const frontmatter: Record<string, string> = {};
@@ -70,8 +70,8 @@ async function parseExperience(experience): Promise<ExperienceType> {
 }
 
 // Sort experiences by `end` date (descending order)
-function sortExperiences(allExperiences: ExperienceType[]): ExperienceType[] {
-  return allExperiences.sort((a: ExperienceType, b: ExperienceType) => {
+function sortExperiences(allExperiences: Experience[]): Experience[] {
+  return allExperiences.sort((a: Experience, b: Experience) => {
     if (a.end === "Ongoing") return -1;
     if (b.end === "Ongoing") return 1;
     return new Date(b.end).getTime() - new Date(a.end).getTime();
