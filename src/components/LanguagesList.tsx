@@ -18,6 +18,7 @@ const languageIcons = {
   "Haskell": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/haskell/haskell-original.svg",
   "Kotlin": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg",
   "C": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
+  "EJS": "https://www.svgrepo.com/show/373574/ejs.svg",
 };
 
 function setPercentages(languages) {
